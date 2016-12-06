@@ -1,0 +1,59 @@
+doctype html
+html(lang="en")
+  head
+    title= pageTitle
+    link(rel = 'stylesheet' href = 'http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css')
+    script (src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js")
+    style.
+        .center-block{
+            float:none;
+        }
+        .container{
+            text-align:center; width : 40%;
+        }
+        .centered{
+            text-align:left;
+        }
+        
+   script.
+    $("#confirm").click(function(){
+        $("#success").html("Order Placed !")
+    })
+    function displayMsg(){
+        alert("Your Order was placed successfully. Your order will be delivere in 30 minutes or less");
+        $("#success").html("Order Placed !")
+    }
+    
+
+  body      
+    .container
+        .page-header 
+            h3 Confirm your order 
+        .centered
+        .jumbotron
+            h4 Your Order :  
+                                    
+            label Quantity: #{formData.qty}
+            br
+            label Approximate delivery time : 30 Minutes
+            br
+            label Size: #{formData.size}
+            br
+            label Crust:#{formData.crust}
+            br
+            label Toppings : #{formData.toppings}
+            script.
+                if(#{formData.toppings})
+                    for result in formData.toppings
+                        label #{result} 
+                else 
+                    p 
+                        No toppings
+
+            br
+            label Total Cost : $#{price} (including Tax)
+            br
+
+            form(method ="" action ="#")
+                input(class = "btn btn-default" type="submit", value="Confirm" onclick= "displayMsg()")
+                a(class="btn btn-default" href="/" role="button") Cancel

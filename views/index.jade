@@ -1,0 +1,65 @@
+doctype html
+html(lang="en")
+  head
+    title= pageTitle
+    link(rel = 'stylesheet' href = 'http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css')
+    script (src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js")
+    style 
+        .center-block(float:none;)
+            
+  body      
+
+
+    .container
+        .page-header 
+            h3 Order your Pizza here 
+        .row-centered
+         form(method ="post" action ="/ConfirmOrder")
+         
+                .col-xs-6 
+                                             
+                    .form-group
+                        label Quantity: 
+                        select(class = "form-control" name = "qty")
+                            for result in jsondata.Price
+                                option #{result.qty}
+                                                        
+                    .form-group
+                        label Size:
+                        select(class = "form-control" name = "size")
+                            for result in jsondata.size
+                                option #{result}
+                    .form-group
+                        label Crust:
+                        select(class = "form-control" name= "crust")
+                            for result in jsondata.crust
+                                option #{result}
+
+                    .col-xs-6 
+                        .form-group
+                            label Toppings : 
+                            for result in jsondata.Toppings
+                                .checkbox
+                                    input(type="checkbox", name= "toppings", value= "'#{result}'" ) 
+                                    label #{result} 
+
+                   
+
+                .col-xs-6
+
+                    h4 Ready to place your order ?
+
+                    h5 Just need your details 
+
+                    .form-group
+                        label Name 
+                        input(type = "text" , name = "name", class ="form-control", placeholder ="Name")
+                    .form-group
+                        label Address
+                        input(type = "text", name = "address", class = "form-control", placeholder ="Address" )
+                    .form-group
+                        label Phone Number
+                        input(type = "tel", name = "phone", class = "form-control", placeholder ="Phone Number" )
+                            
+                      p.buttons
+                        input(class = "btn btn-default" type="submit", value="Order")

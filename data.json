@@ -1,0 +1,24 @@
+{
+  "size": [
+    "Small",
+    "medium",
+    "large"
+  ],
+  "crust": [
+    "Thin crust",
+    "Cheesy crust",
+    "Regular"
+  ],
+  "Toppings": [
+    "Pineapple",
+    "Extra cheese",
+    "Veggies",
+    "Suprise Me"
+  ],
+  "Price": [
+    {"qty":1,"price":"7:99"},
+    {"qty":2,"price":"12"},
+    {"qty":3,"price":"17.50"},
+    {"qty":4,"price":"20"}
+  ]
+}

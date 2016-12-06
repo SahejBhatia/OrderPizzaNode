@@ -1,0 +1,21 @@
+doctype html
+html(lang="en")
+  head
+    title= pageTitle
+    link(rel = 'stylesheet' href = 'http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css')
+    script (src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js")
+    style 
+        .center-block(float:none;)
+   script var classes = [col-md-2 col-md-offset-5]
+        
+ body      
+    .container
+        .page-header 
+            h3 #{pageTitle} 
+        .row-centered
+            h4 #{msg}
+         
+         
+            .col-xs-6 
+                a(class="btn btn-default" href="/" role="button") Back
+                     
